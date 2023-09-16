@@ -14,7 +14,7 @@ export function SignIn() {
   ]; // Adicione as cores que desejar
   const gradientStops = [0, 0.4, 0.6, 0.9, 1]; // Posições das cores correspondentes
 
-  const bgImg = require("../assets/loginBG2.png");
+  const bgImg = require("../assets/backgroundSigin.png");
 
   return (
     <ImageBackground source={bgImg} resizeMode="stretch" style={{ flex: 1 }}>
