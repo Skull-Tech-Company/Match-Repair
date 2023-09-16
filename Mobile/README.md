@@ -21,3 +21,10 @@ Apos instalar as dependencias abra o terminal novamente e digite o comando para 
 ```
 
 ## Demonstração
+SplashScreen
+
+![image](https://github.com/Skull-Tech-Company/Match-Repair/assets/85755177/5e26b56a-722c-4ebf-81e9-3677b51b763b)
+
+Tela inicial
+
+![image](https://github.com/Skull-Tech-Company/Match-Repair/assets/85755177/e6260233-8ada-452a-953f-076e2f2dd74b)
