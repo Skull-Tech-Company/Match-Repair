@@ -19,6 +19,7 @@ import EyeOff from "../assets/icons/eyeOff.svg";
 import { AlertMessage } from "./AlertMessage";
 
 import { THEME } from "../styles/theme";
+import { AlertEmailSend } from "./AlertEmailSend";
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -33,6 +34,8 @@ export function LoginForm() {
           backgroundColor: "rgba(255,255,255, 0.6)",
         }}
       >
+        {/* <AlertEmailSend title="Enviamos um link de redefinição de senha para o e-mail xxxxxx@xxxxx.com" /> */}
+
         {/* <AlertMessage
           title={"Deseja alterar sua senha?"}
           text={

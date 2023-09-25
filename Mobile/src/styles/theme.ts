@@ -4,7 +4,7 @@ export const THEME = extendTheme({
   colors: {
     orange: {
       40: "rgba(255,196,142,0.4)",
-      100: "#FFC48E",
+      100: "rgba(255, 196, 142, 1)",
       200: "#FF9B3F",
       300: "#FF7A00",
     },
@@ -30,5 +30,5 @@ export const THEME = extendTheme({
     body: "Roboto_400Regular",
     medium: "Roboto_500Medium",
   },
-  fontSizes: {},
+  fontSizes: { H4: 24 },
 });
