@@ -28,3 +28,6 @@ SplashScreen
 Tela inicial
 
 ![image](https://github.com/Skull-Tech-Company/Match-Repair/assets/85755177/e6260233-8ada-452a-953f-076e2f2dd74b)
+
+Pagina Home e Menu lateral
+![Home e Menu lateral gif](https://github.com/Skull-Tech-Company/Match-Repair/assets/85755177/26b3f138-466a-4ea7-8296-f753796b56a6)
