@@ -16,6 +16,7 @@ import {
 } from "@/screens/SignIn/SignInStyles";
 import eyeIconOn from "../../assets/eyeOn.png";
 import eyeIconOff from "../../assets/eyeOff.png";
+import { Modal } from "@/components/Modal/Modal";
 
 export function SigIn() {
   // salvar login e senha no state conforme é digitado
@@ -23,6 +24,10 @@ export function SigIn() {
   const [password, setPassword] = useState("");
   // state para mostrar/ocultar a senha mudando o type do input
   const [showPassword, setShowPassword] = useState(false);
+
+  // state de visualização do modal
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   const navigate = useNavigate();
   // alterna a visibilidade da senha, state inicia com falso e mudamos para true quando clicado
   const togglePasswordVisibilty = () => setShowPassword(!showPassword);
@@ -45,11 +50,27 @@ export function SigIn() {
     navigate("/Home");
   };
 
+  // Deixa modal visivel
+  const changeModalVisible = () => {
+    setIsModalVisible(true);
+  };
+
   return (
     // Bg de fundo
     <BgImg>
       <ColumnDiv>
         <Logo />
+        {/* Modal de alertas */}
+        {isModalVisible ? (
+          <Modal
+            textmodalcolor="red"
+            title="Deseja alterar sua senha?"
+            text="Clique em voltar para cancelar ou redefinir para alterar a senha"
+            hasButton
+            textButton="Redefinir"
+            modalCloseBtn={() => setIsModalVisible(false)}
+          />
+        ) : null}
         {/* Inicio do Form */}
         <StyledForm onSubmit={handleSubmit}>
           <ColumnDiv>
@@ -121,7 +142,7 @@ export function SigIn() {
             <Button type="submit" $primary onClick={handleAcessClick}>
               Acessar
             </Button>
-            <ForgotPassWordLink>
+            <ForgotPassWordLink onClick={changeModalVisible}>
               Esqueceu a senha? <p> Clique aqui</p>
             </ForgotPassWordLink>
           </ColumnDiv>
