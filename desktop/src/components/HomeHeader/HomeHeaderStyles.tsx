@@ -61,6 +61,10 @@ export const HeaderFunctions = styled.div`
   justify-content: flex-end;
   gap: 1.9rem;
   margin-right: 2.4rem;
+
+  img {
+    cursor: pointer;
+  }
 `;
 
 export const UserImage = styled.img`

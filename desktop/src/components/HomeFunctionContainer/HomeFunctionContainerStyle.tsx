@@ -5,10 +5,21 @@ export const Container = styled.div`
   display: flex;
   width: 28.7rem;
   height: 15rem;
-  border-radius: 1rem;
+  border-radius: 2rem 2rem 0rem 0rem;
   cursor: pointer;
   position: relative;
-  background-color: #858282;
+  background-color: white;
+
+  &:active {
+    background-color: ${theme.colors.orangeSecondary};
+
+    h1 {
+      color: black;
+    }
+    h5 {
+      color: black;
+    }
+  }
   h1 {
     color: ${theme.colors.orangeSat};
     font-size: 3.9rem;
@@ -31,6 +42,10 @@ export const Container = styled.div`
     position: absolute;
     bottom: 0;
     margin-left: 1rem;
+  }
+
+  @media (max-width: 1148px) {
+    width: 24rem;
   }
 `;
 
