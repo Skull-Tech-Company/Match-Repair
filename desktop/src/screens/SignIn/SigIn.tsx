@@ -27,6 +27,7 @@ export function SigIn() {
 
   // state de visualização do modal
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [changePasswordModal, setChangePasswordModal] = useState(false);
 
   const navigate = useNavigate();
   // alterna a visibilidade da senha, state inicia com falso e mudamos para true quando clicado
@@ -44,10 +45,17 @@ export function SigIn() {
     event.preventDefault();
     console.log("Username:", username);
     console.log("Password:", password);
-  };
 
-  const handleAcessClick = () => {
-    navigate("/Home");
+    const isFormValid = true;
+
+    if (isFormValid && username.length > 0 && password.length > 0) {
+      navigate("/Home");
+      console.log("Acessou Home");
+    } else {
+      // Adicionar biblioteca de alert ou abrir modal.
+      alert("não foi possivel fazer o login");
+      return;
+    }
   };
 
   // Deixa modal visivel
@@ -69,8 +77,23 @@ export function SigIn() {
             hasButton
             textButton="Redefinir"
             modalCloseBtn={() => setIsModalVisible(false)}
+            // Adicionar logica enviar e-mail
+            modalButtonFunction={() => {
+              setIsModalVisible(false);
+              setChangePasswordModal(true);
+            }}
           />
         ) : null}
+        {changePasswordModal ? (
+          <Modal
+            modalCloseBtn={() => setChangePasswordModal(false)}
+            textmodalcolor="red"
+            title="Enviamos um link de
+            redefinição de senha para o
+            e-mail xxxxxx@xxxxx.com"
+          />
+        ) : null}
+
         {/* Inicio do Form */}
         <StyledForm onSubmit={handleSubmit}>
           <ColumnDiv>
@@ -139,7 +162,7 @@ export function SigIn() {
           {/* Fim do input de lembrar de mim */}
           {/* Botão e esqueceu a senha */}
           <ColumnDiv>
-            <Button type="submit" $primary onClick={handleAcessClick}>
+            <Button type="submit" $primary>
               Acessar
             </Button>
             <ForgotPassWordLink onClick={changeModalVisible}>

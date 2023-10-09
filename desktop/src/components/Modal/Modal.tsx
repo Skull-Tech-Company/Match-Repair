@@ -7,6 +7,7 @@ interface Props {
   textButton?: string;
   textmodalcolor: string;
   modalCloseBtn: () => void;
+  modalButtonFunction?: () => void;
 }
 
 export function Modal({
@@ -16,6 +17,7 @@ export function Modal({
   textmodalcolor,
   textButton,
   modalCloseBtn,
+  modalButtonFunction,
 }: Props) {
   return (
     <ModalStyled textmodalcolor={textmodalcolor}>
@@ -32,7 +34,9 @@ export function Modal({
       </ModalCloseBtn>
       <h3>{title}</h3>
       <p>{text}</p>
-      {hasButton ? <button>{textButton}</button> : null}
+      {hasButton ? (
+        <button onClick={modalButtonFunction}>{textButton}</button>
+      ) : null}
     </ModalStyled>
   );
 }
