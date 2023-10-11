@@ -1,10 +1,10 @@
+import { useModal } from "@/contexts/ModalContext";
 import {
   HomeWrapper,
   HomeContainer,
   Container,
   AlignContainer,
 } from "./HomeStyle";
-
 import { HomeFunctionContainer } from "@/components/HomeFunctionContainer/HomeFunctionContainer";
 import { HomeHeader } from "@/components/HomeHeader/HomeHeader";
 import { HomeLeftMenu } from "@/components/HomeLeftMenu/HomeLeftMenu";
@@ -20,10 +20,17 @@ import CarrinhoIcon from "@/assets/HomeFunctionsIcon/CarrinhoIcon.svg";
 import FornecedoresIcon from "@/assets/HomeFunctionsIcon/FornecedoresIcon.svg";
 import FinanceiroIcon from "@/assets/HomeFunctionsIcon/FinanceiroIcon.svg";
 import NotasIcon from "@/assets/HomeFunctionsIcon/NotasIcon.svg";
+import { ClientRegisterModal } from "@/components/ClientRegisterModal/ClientRegisterModal";
+
+import { EmployeeRegisterModal } from "@/components/EmployeeRegisterModal/EmployeeRegisterModal";
 
 export function Home() {
+  const { isClientModalVisible, isEmployeeModalVisible } = useModal();
+
   return (
     <HomeWrapper>
+      {isEmployeeModalVisible ? <EmployeeRegisterModal /> : null}
+      {isClientModalVisible ? <ClientRegisterModal /> : null}
       <HomeHeader />
       <HomeContainer>
         <HomeLeftMenu />

@@ -17,6 +17,8 @@ export const Menu = styled.div`
     color: white;
     font-size: 1.8rem;
     text-align: left;
+    cursor: pointer;
+    font-weight: 600;
   }
 
   button:hover {

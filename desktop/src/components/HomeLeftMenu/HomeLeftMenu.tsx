@@ -1,3 +1,5 @@
+import { useModal } from "@/contexts/ModalContext";
+
 import { Menu, Container } from "./HomeLeftMenuStyles";
 import HomeIcon from "@/assets/HomeIcons/Home.svg";
 import RHIcon from "@/assets/HomeIcons/RH.svg";
@@ -11,13 +13,16 @@ import FinanceiroIcon from "@/assets/HomeIcons/FinanceiroIcon.svg";
 import FiscalIcon from "@/assets/HomeIcons/FiscalIcon.svg";
 
 export function HomeLeftMenu() {
+  const { toggleClientModalVisibility, toggleEmployeeModalVisibility } =
+    useModal();
+
   return (
     <Menu>
       <Container>
         <img src={HomeIcon} alt="" />
         <button>Inicio</button>
       </Container>
-      <Container>
+      <Container onClick={toggleClientModalVisibility}>
         <img src={RHIcon} alt="" />
         <button>Clientes</button>
       </Container>
@@ -39,7 +44,7 @@ export function HomeLeftMenu() {
         <img src={AgendaIcon} alt="" />
         <button>Agenda</button>
       </Container>
-      <Container>
+      <Container onClick={toggleEmployeeModalVisibility}>
         <img src={FuncionarioIcon} alt="" />
         <button>Funcionarios</button>
       </Container>
