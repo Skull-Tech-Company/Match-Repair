@@ -13,8 +13,11 @@ import FinanceiroIcon from "@/assets/HomeIcons/FinanceiroIcon.svg";
 import FiscalIcon from "@/assets/HomeIcons/FiscalIcon.svg";
 
 export function HomeLeftMenu() {
-  const { toggleClientModalVisibility, toggleEmployeeModalVisibility } =
-    useModal();
+  const {
+    toggleClientModalVisibility,
+    toggleEmployeeModalVisibility,
+    toggleOSModalVisibility,
+  } = useModal();
 
   return (
     <Menu>
@@ -32,7 +35,7 @@ export function HomeLeftMenu() {
         <button>Orçamento</button>
       </Container>
 
-      <Container>
+      <Container onClick={toggleOSModalVisibility}>
         <img src={OSIcon} alt="" />
         <button>O.S.</button>
       </Container>

@@ -1,16 +1,16 @@
 import { useModal } from "@/contexts/ModalContext";
 import {
-  EmployeeModal,
+  Modal,
   InputField,
   FormContainer,
   CloseModal,
   ButtonContainer,
-} from "./EmployeeRegisterModalStyle";
+} from "../Modal/HomeFunctionsModal/ModalStyle";
 import CloseSvg from "@/assets/HomeIcons/close.svg";
 export function EmployeeRegisterModal() {
   const { toggleEmployeeModalVisibility } = useModal();
   return (
-    <EmployeeModal>
+    <Modal>
       <CloseModal
         src={CloseSvg}
         alt=""
@@ -109,6 +109,6 @@ export function EmployeeRegisterModal() {
           <button>Salvar</button>
         </ButtonContainer>
       </form>
-    </EmployeeModal>
+    </Modal>
   );
 }

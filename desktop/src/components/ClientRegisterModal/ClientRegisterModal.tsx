@@ -1,17 +1,17 @@
 import { useModal } from "@/contexts/ModalContext";
 import {
-  ClientModal,
+  Modal,
   InputField,
   FormContainer,
   ButtonContainer,
   CloseModal,
-} from "./ClientRegisterModalStyle";
+} from "../Modal/HomeFunctionsModal/ModalStyle";
 import CloseSvg from "@/assets/HomeIcons/close.svg";
 
 export function ClientRegisterModal() {
   const { toggleClientModalVisibility } = useModal();
   return (
-    <ClientModal>
+    <Modal>
       <CloseModal src={CloseSvg} alt="" onClick={toggleClientModalVisibility} />
       <h3>Cadastro de clientes</h3>
       <form action="">
@@ -97,6 +97,6 @@ export function ClientRegisterModal() {
           <button>Salvar</button>
         </ButtonContainer>
       </form>
-    </ClientModal>
+    </Modal>
   );
 }

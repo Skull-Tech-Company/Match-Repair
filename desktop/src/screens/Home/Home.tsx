@@ -1,13 +1,21 @@
+// Modal context
 import { useModal } from "@/contexts/ModalContext";
+// Home Style
 import {
   HomeWrapper,
   HomeContainer,
   Container,
   AlignContainer,
 } from "./HomeStyle";
+// Components
 import { HomeFunctionContainer } from "@/components/HomeFunctionContainer/HomeFunctionContainer";
 import { HomeHeader } from "@/components/HomeHeader/HomeHeader";
 import { HomeLeftMenu } from "@/components/HomeLeftMenu/HomeLeftMenu";
+import { ClientRegisterModal } from "@/components/ClientRegisterModal/ClientRegisterModal";
+import { EmployeeRegisterModal } from "@/components/EmployeeRegisterModal/EmployeeRegisterModal";
+import { OSModal } from "@/components/OSModal/OSModal";
+
+// Icons import
 import RHImage from "@/assets/HomeFunctionsIcon/RHIcon.svg";
 import OrcamentoIcon from "@/assets/HomeFunctionsIcon/OrcamentoIcon.svg";
 import OSIcon from "@/assets/HomeFunctionsIcon/OSIcon.svg";
@@ -20,17 +28,17 @@ import CarrinhoIcon from "@/assets/HomeFunctionsIcon/CarrinhoIcon.svg";
 import FornecedoresIcon from "@/assets/HomeFunctionsIcon/FornecedoresIcon.svg";
 import FinanceiroIcon from "@/assets/HomeFunctionsIcon/FinanceiroIcon.svg";
 import NotasIcon from "@/assets/HomeFunctionsIcon/NotasIcon.svg";
-import { ClientRegisterModal } from "@/components/ClientRegisterModal/ClientRegisterModal";
-
-import { EmployeeRegisterModal } from "@/components/EmployeeRegisterModal/EmployeeRegisterModal";
 
 export function Home() {
-  const { isClientModalVisible, isEmployeeModalVisible } = useModal();
+  const { isClientModalVisible, isEmployeeModalVisible, isOSModalVisible } =
+    useModal();
 
   return (
     <HomeWrapper>
       {isEmployeeModalVisible ? <EmployeeRegisterModal /> : null}
       {isClientModalVisible ? <ClientRegisterModal /> : null}
+      {isOSModalVisible ? <OSModal /> : null}
+
       <HomeHeader />
       <HomeContainer>
         <HomeLeftMenu />
