@@ -9,7 +9,7 @@ import {
   ModalContent,
   DefectContainer,
   OSProd,
-} from "../Modal/HomeFunctionsModal/ModalStyle";
+} from "../ModalStyle/ModalStyle";
 import CloseSvg from "@/assets/HomeIcons/close.svg";
 export function OSModal() {
   const { toggleOSModalVisibility } = useModal();

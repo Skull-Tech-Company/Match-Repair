@@ -11,9 +11,9 @@ import {
 import { HomeFunctionContainer } from "@/components/HomeFunctionContainer/HomeFunctionContainer";
 import { HomeHeader } from "@/components/HomeHeader/HomeHeader";
 import { HomeLeftMenu } from "@/components/HomeLeftMenu/HomeLeftMenu";
-import { ClientRegisterModal } from "@/components/ClientRegisterModal/ClientRegisterModal";
-import { EmployeeRegisterModal } from "@/components/EmployeeRegisterModal/EmployeeRegisterModal";
-import { OSModal } from "@/components/OSModal/OSModal";
+import { ClientRegisterModal } from "@/components/Modal/ClientRegisterModal/ClientRegisterModal";
+import { EmployeeRegisterModal } from "@/components/Modal/EmployeeRegisterModal/EmployeeRegisterModal";
+import { OSModal } from "@/components/Modal/OSModal/OSModal";
 
 // Icons import
 import RHImage from "@/assets/HomeFunctionsIcon/RHIcon.svg";
@@ -28,16 +28,22 @@ import CarrinhoIcon from "@/assets/HomeFunctionsIcon/CarrinhoIcon.svg";
 import FornecedoresIcon from "@/assets/HomeFunctionsIcon/FornecedoresIcon.svg";
 import FinanceiroIcon from "@/assets/HomeFunctionsIcon/FinanceiroIcon.svg";
 import NotasIcon from "@/assets/HomeFunctionsIcon/NotasIcon.svg";
+import { DiaryModal } from "@/components/Modal/DiaryModal/DiaryModal";
 
 export function Home() {
-  const { isClientModalVisible, isEmployeeModalVisible, isOSModalVisible } =
-    useModal();
+  const {
+    isClientModalVisible,
+    isEmployeeModalVisible,
+    isOSModalVisible,
+    isDiaryModalVisible,
+  } = useModal();
 
   return (
     <HomeWrapper>
       {isEmployeeModalVisible ? <EmployeeRegisterModal /> : null}
       {isClientModalVisible ? <ClientRegisterModal /> : null}
       {isOSModalVisible ? <OSModal /> : null}
+      {isDiaryModalVisible ? <DiaryModal /> : null}
 
       <HomeHeader />
       <HomeContainer>

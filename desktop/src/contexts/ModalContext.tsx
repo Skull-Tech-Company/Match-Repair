@@ -4,16 +4,25 @@ export const ModalContext = createContext({
   isClientModalVisible: false,
   isEmployeeModalVisible: false,
   isOSModalVisible: false,
+  isDiaryModalVisible: false,
+  isRegisterProductModalVisible: false,
   toggleClientModalVisibility: () => {},
   toggleEmployeeModalVisibility: () => {},
   toggleOSModalVisibility: () => {},
+  toggleDiaryModalVisible: () => {},
+  toggleRegisterProductModalVisible: () => {},
 });
 
 export function ModalProvider({ children }) {
+  // State dos modais
   const [isClientModalVisible, setIsClientModalVisible] = useState(false);
   const [isEmployeeModalVisible, setIsEmployeeModalVisible] = useState(false);
   const [isOSModalVisible, setIsOSModalVisible] = useState(false);
+  const [isDiaryModalVisible, setIsDiaryModalVisible] = useState(false);
+  const [isRegisterProductModalVisible, setIsRegisterProductModalVisible] =
+    useState(false);
 
+  // Funçoes para fechar modal
   const toggleClientModalVisibility = () => {
     setIsClientModalVisible((prev) => !prev);
   };
@@ -22,6 +31,12 @@ export function ModalProvider({ children }) {
   };
   const toggleOSModalVisibility = () => {
     setIsOSModalVisible((prev) => !prev);
+  };
+  const toggleDiaryModalVisible = () => {
+    setIsDiaryModalVisible((prev) => !prev);
+  };
+  const toggleRegisterProductModalVisible = () => {
+    setIsRegisterProductModalVisible((prev) => !prev);
   };
 
   return (
@@ -33,6 +48,10 @@ export function ModalProvider({ children }) {
         toggleEmployeeModalVisibility,
         isOSModalVisible,
         toggleOSModalVisibility,
+        isDiaryModalVisible,
+        toggleDiaryModalVisible,
+        isRegisterProductModalVisible,
+        toggleRegisterProductModalVisible,
       }}
     >
       {children}

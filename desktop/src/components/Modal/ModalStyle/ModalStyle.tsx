@@ -33,6 +33,7 @@ export const Modal = styled.div`
   z-index: 3;
   overflow-y: auto;
   max-height: 70vh;
+
   input {
     width: 38.8rem;
     border: 2px solid ${theme.colors.orangeSat};
@@ -45,6 +46,7 @@ export const Modal = styled.div`
     color: ${theme.colors.blackSecondary};
     font-size: 1.8rem;
   }
+
   h3 {
     color: white;
     font-size: 2.8rem;
@@ -53,11 +55,13 @@ export const Modal = styled.div`
     margin-top: 4rem;
     margin-bottom: 4rem;
   }
+
   label {
     font-size: 1.8rem;
     font-weight: 600;
     margin-bottom: 1.1rem;
   }
+
   button {
     color: ${theme.colors.orangeSat};
     text-align: center;
@@ -68,6 +72,15 @@ export const Modal = styled.div`
     border-radius: 10px;
     min-width: 18rem;
     cursor: pointer;
+  }
+
+  span {
+    color: white;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 1rem;
   }
 `;
 export const InputField = styled.div`
@@ -112,6 +125,11 @@ export const DefectInput = styled.textarea`
   height: 21rem;
   resize: none;
   outline: none;
+
+  &::placeholder {
+    color: ${theme.colors.blackSecondary};
+    font-size: 1.8rem;
+  }
 `;
 
 export const DefectContainer = styled.div`

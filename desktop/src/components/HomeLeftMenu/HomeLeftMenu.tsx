@@ -17,6 +17,7 @@ export function HomeLeftMenu() {
     toggleClientModalVisibility,
     toggleEmployeeModalVisibility,
     toggleOSModalVisibility,
+    toggleDiaryModalVisible,
   } = useModal();
 
   return (
@@ -43,7 +44,7 @@ export function HomeLeftMenu() {
         <img src={CarroIcon} alt="" />
         <button>Veiculos</button>
       </Container>
-      <Container>
+      <Container onClick={toggleDiaryModalVisible}>
         <img src={AgendaIcon} alt="" />
         <button>Agenda</button>
       </Container>
